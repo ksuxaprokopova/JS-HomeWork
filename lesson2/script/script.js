@@ -8,7 +8,7 @@ const userAge = "44";
     console.log("userAge", userAge);
 
 const userCity = "Odessa";
- 
+    console.log(greetings);
 
 
     
@@ -21,7 +21,7 @@ let cursorCoord;
 
 
 
-let greetings;
-    greetings = "Hello, World!";
-    console.log(greetings);
+let newGreetings;
+    newGreetings = "Hello, World!";
+    console.log(newGreetings);
     
