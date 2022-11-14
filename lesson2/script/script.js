@@ -8,7 +8,7 @@ const userAge = "44";
     console.log("userAge", userAge);
 
 const userCity = "Odessa";
-    console.log(greetings);
+    console.log(userCity);
 
 
     
