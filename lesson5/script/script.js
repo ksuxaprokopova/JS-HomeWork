@@ -39,22 +39,15 @@
 
 
 // 2)
-let i;
-let j;
+
 
 const naturalNumbers = (start, finish) => {
     for(let i = start ; i <= finish; i++){
-       
-        let j = i;
-        while( i % J == 0){
-            console.log( i);console.log( i);
+        for(let j = start; j <= i; j++){
+            if ( i % j !== 0){
+               console.log(i);
+            }
         }
-        // for(let j = start; j < i ; j++){
-        //     if( i % j == 0){
-        //         continue;
-        //     }
-        // }
-        
-C};
-
+    }
+}
 naturalNumbers(1, 10);
