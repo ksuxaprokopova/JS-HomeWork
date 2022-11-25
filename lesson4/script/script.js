@@ -46,9 +46,8 @@
 // function getSum(a, b){
 //     return a + b;
 // }
-// const sum = (a, b)  => a + b;
 
-// const res1 = sum(6,9);
+// const res1 = getSum(6,9);
 // console.log(`res1`, res1)
 
 
