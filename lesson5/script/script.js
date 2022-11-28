@@ -58,46 +58,49 @@
 
 // 3)
 
-//  const LOGIN = "ADMIN";
-//  const PASSWORD = "1q2w3e";
+ const LOGIN = "ADMIN";
+ const PASSWORD = "1q2w3e";
 
-//  const authorise = () => {
-//     let userPassword;
-//     let userLogin;
-//     let isAuthSuccess = false;
+ const authorise = () => {
+    let userPassword;
+    let userLogin;
+    let isAuthSuccess = false;
 
+            do {
+
+                for (let i = 3 ; i >=1 ; i--){
+                    alert("Колличество попыток авторизации:" + i );
+
+
+                    userLogin = prompt("Логин: ");
+                    if(!userLogin){
+                        alert("Введите логин!");
+                        continue;
+                    }
     
-
-//         do {
-
-//             for (let i = 3 ; i >=1 ; i--){
-//                 alert("Колличество попыток авторизации:" + i );
-
-               
-//                     userLogin = prompt("Логин: ");
-//                     if(!userLogin){
-//                         alert("Введите логин!");
-//                         continue;
-//                     }
+                    userPassword = prompt("Пароль: ");
+                    if(!userPassword){
+                        alert("Введите пароль!");
+                        continue;
+                    }
     
-//                     userPassword = prompt("Пароль: ");
-//                     if(!userPassword){
-//                         alert("Введите пароль!");
-//                         continue;
-//                     }
-    
-//                     if(userPassword === PASSWORD || userLogin === LOGIN){
-//                         isAuthSuccess = true; 
-//                     }else {
-//                         alert("Данные не верны!");
-//                     } 
-//             }
-//             alert("Попробуйте еще раз!");
-//             continue;
+                    if(userPassword === PASSWORD || userLogin === LOGIN){
+                        isAuthSuccess = true;
 
-//         }while(!isAuthSuccess);
-//         alert("Welcome!");
-   
-//  };
+                        break; 
+                    }else {
+                        alert("Данные не верны!");
+                    } 
 
-//  authorise();
+                    if( i === 1 || isAuthSuccess){
+                        alert("Вы не прошли авторизацию!");
+                        break;
+                    }
+                } 
+
+            }while(!isAuthSuccess)
+            alert("Welcome!");
+        
+ };
+
+ authorise();
