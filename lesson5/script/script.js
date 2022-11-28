@@ -41,13 +41,63 @@
 // 2)
 
 
-const naturalNumbers = (start, finish) => {
-    for(let i = start ; i <= finish; i++){
-        for(let j = start; j <= i; j++){
-            if ( i % j !== 0){
-               console.log(i);
-            }
-        }
-    }
-}
-naturalNumbers(1, 10);
+// let naturalNumbers = (start, finish) => {
+//     nextPrice:
+//     for (let i = start ; i <= finish; i++){
+//         for (let j = 2; j < i; j++){
+//             if ( i % j == 0){
+//                continue nextPrice;
+//             }
+//         }
+//         console.log(i);
+//     }
+// }
+
+// naturalNumbers(2, 30);
+
+
+// 3)
+
+//  const LOGIN = "ADMIN";
+//  const PASSWORD = "1q2w3e";
+
+//  const authorise = () => {
+//     let userPassword;
+//     let userLogin;
+//     let isAuthSuccess = false;
+
+    
+
+//         do {
+
+//             for (let i = 3 ; i >=1 ; i--){
+//                 alert("Колличество попыток авторизации:" + i );
+
+               
+//                     userLogin = prompt("Логин: ");
+//                     if(!userLogin){
+//                         alert("Введите логин!");
+//                         continue;
+//                     }
+    
+//                     userPassword = prompt("Пароль: ");
+//                     if(!userPassword){
+//                         alert("Введите пароль!");
+//                         continue;
+//                     }
+    
+//                     if(userPassword === PASSWORD || userLogin === LOGIN){
+//                         isAuthSuccess = true; 
+//                     }else {
+//                         alert("Данные не верны!");
+//                     } 
+//             }
+//             alert("Попробуйте еще раз!");
+//             continue;
+
+//         }while(!isAuthSuccess);
+//         alert("Welcome!");
+   
+//  };
+
+//  authorise();
