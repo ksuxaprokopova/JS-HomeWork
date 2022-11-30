@@ -94,12 +94,14 @@
 
                     if( i === 1 || isAuthSuccess){
                         alert("Вы не прошли авторизацию!");
-                        break;
+                        return;
                     }
                 } 
 
-            }while(!isAuthSuccess)
-            alert("Welcome!");
+            }while(!isAuthSuccess){
+                alert("Welcome!");
+                
+            }
         
  };
 
