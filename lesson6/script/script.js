@@ -14,26 +14,20 @@ let userPassword;
 
  const authorise = () => {
 
- 
-
-      
-
       do{
 
          userName = prompt("Enter your name: ");
          userSurname = prompt("Enter your surname: ");
-
-         firstLetterName = userName.slice(0, 1);
-         lastLetterName = userName.slice(1);
-         firstLetterSurname = userSurname.slice(0, 1);
-         lastLetterSurname = userSurname.slice(1);
-
          
- 
+
+         bigName = userName.toUpperCase.slice(0, 1);
+         littleName = userName.toLowerCase.slice(1);
+         bigSurname = userSurname.toUpperCase.slice(0, 1);
+         littleSurname - userSurname.toLowerCase.slice(1);
  
  
          if(userName.length >= 1 && userSurname.length >= 1){
-            alert( firstLetterName.toUpperCase + lastLetterName.toLowerCase + " " + firstLetterSurname.toUpperCase + lastLetterSurname.toLowerCase );
+            alert(bigName + littleName + " " + bigSurname + littleSurname);
             break;
          }else{
             alert("Enter correct data!");
@@ -44,8 +38,8 @@ let userPassword;
 
          userPassword = prompt("Enter your password: ");
 
-         bigLetters = userPassword[userPassword.length].toUpperCase();
-         littleLetters = userPassword[userPassword.length].toLowerCase();
+         bigLetters = userPassword.indexOf().toUpperCase();
+         littleLetters = userPassword.indexOf().toLowerCase();
          numberLetters;
 
          
