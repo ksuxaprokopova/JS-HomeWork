@@ -14,7 +14,27 @@
 // }
 
 
+const makeScheduleAsk = () => {
+    let end = false;
+    const makeTimetable = {};
 
+    do{
+        let askTime = prompt("Set the time: ");
+        let askTask = prompt("Set the task: ");
+
+        if(!askTask || !askTime){
+            end = true;
+        }else{
+            makeTimetable[askTime] = askTask;
+            alert("Task added!");
+        }
+    }while(!end){
+        return makeTimetable;
+    };
+};
+
+let timetable = makeScheduleAsk();
+console.log(`timetable`, timetable);
 
 
 
@@ -36,22 +56,22 @@
 // Hint: работа с целыми числами более безопасна, чем с десятичными.
 
 
-const salaries = {
-    John: "4300.00",
-    Anna: "5700.40",
-    Peter: "4900.95",
-};
+// const salaries = {
+//     John: "4300.00",
+//     Anna: "5700.40",
+//     Peter: "4900.95",
+// };
 
-const getSalariesTotal = (salaries) => {
-    let total = 0;
-    for(let name in salaries){
-        console.log(`name`, name);
-        console.log(`salaries[name]`, salaries[name]);
-        total += Number( salaries[name]);
-    }
+// const getSalariesTotal = (salaries) => {
+//     let total = 0;
+//     for(let name in salaries){
+//         console.log(`name`, name);
+//         console.log(`salaries[name]`, salaries[name]);
+//         total += Number( salaries[name]);
+//     }
 
-    return total.toFixed(2);
-};
+//     return total.toFixed(2);
+// };
 
-const totalResult = getSalariesTotal(salaries);
-console.log(`totalResult`, totalResult);
+// const totalResult = getSalariesTotal(salaries);
+// console.log(`totalResult`, totalResult);
