@@ -9,92 +9,92 @@
 
 
 
-// const stringUpperLetter = (userString) =>{
-//    const firstLetterString = (userString[0]).toUpperCase();
-//    const lastLettersString = (userString.slice(1)).toLowerCase();
+const stringUpperLetter = (userString) =>{
+   const firstLetterString = (userString[0]).toUpperCase();
+   const lastLettersString = (userString.slice(1)).toLowerCase();
 
-//    return firstLetterString + lastLettersString;
-// };
-
-
-
-
-// const userRegistrationName = () => {
-//    let userName;
-
-//    do{
-//       userName = prompt("Enter your name: ");
-
-//       if(!userName){
-//          alert("You didn`t enter your name!");
-//       }else{
-//          break;
-//       }
-//    }while(true);
-
-//    nameUpperCase = stringUpperLetter(userName);
-
-//    return nameUpperCase;
-// };
+   return firstLetterString + lastLettersString;
+};
 
 
 
 
-// const userRegistrationSurname = () => {
-//    let userSurname;
+const userRegistrationName = () => {
+   let userName;
 
-//    do{
-//       userSurname = prompt("Enter your surname: ");
+   do{
+      userName = prompt("Enter your name: ");
 
-//       if(!userSurname){
-//          alert("You didn`t enter your surname!");
-//       }else{
-//          break;
-//       }
-//    }while(true);
+      if(!userName){
+         alert("You didn`t enter your name!");
+      }else{
+         break;
+      }
+   }while(true);
 
-//    surnameUpperCase = stringUpperLetter(userSurname);
+   nameUpperCase = stringUpperLetter(userName);
 
-//    return surnameUpperCase;
-// };
-
-
+   return nameUpperCase;
+};
 
 
 
-// const userRegistrationPassword = () => {
-//    let userPassword;
-//     do{
-//       userPassword = prompt("Enter your password(password must contain at least 6 characters and mixed case characters): ");
 
-//       if(!userPassword || userPassword.length <= 6){
-//          alert("Password must contain at least 6 characters!");
-//       }else if(!isNaN(userPassword) || userPassword.toLowerCase() === userPassword || userPassword.toUpperCase() === userPassword){
-//          alert("Incorrect password!");
-//       }else{
-//          alert("Registration successful!");
-//          break;
-//       }
-//     }while(true);
+const userRegistrationSurname = () => {
+   let userSurname;
 
-//     return userPassword;
-// };
+   do{
+      userSurname = prompt("Enter your surname: ");
 
+      if(!userSurname){
+         alert("You didn`t enter your surname!");
+      }else{
+         break;
+      }
+   }while(true);
 
+   surnameUpperCase = stringUpperLetter(userSurname);
 
-// const correctName = userRegistrationName();
-// const correctSurname = userRegistrationSurname();
-// const correctPassword = userRegistrationPassword();
+   return surnameUpperCase;
+};
 
 
-// alert(`You are registered under the name: ${correctName} ${correctSurname}.
-// Your password: ${correctPassword}`);
 
 
-// stringUpperLetter();
-// userRegistrationName();
-// userRegistrationSurname();
-// userRegistrationPassword();
+
+const userRegistrationPassword = () => {
+   let userPassword;
+    do{
+      userPassword = prompt("Enter your password(password must contain at least 6 characters and mixed case characters): ");
+
+      if(!userPassword || userPassword.length <= 6){
+         alert("Password must contain at least 6 characters!");
+      }else if(!isNaN(userPassword) || userPassword.toLowerCase() === userPassword || userPassword.toUpperCase() === userPassword){
+         alert("Incorrect password!");
+      }else{
+         alert("Registration successful!");
+         break;
+      }
+    }while(true);
+
+    return userPassword;
+};
+
+
+
+const correctName = userRegistrationName();
+const correctSurname = userRegistrationSurname();
+const correctPassword = userRegistrationPassword();
+
+
+alert(`You are registered under the name: ${correctName} ${correctSurname}.
+Your password: ${correctPassword}`);
+
+
+stringUpperLetter();
+userRegistrationName();
+userRegistrationSurname();
+userRegistrationPassword();
 
 
 
