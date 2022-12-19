@@ -5,6 +5,24 @@
 // С помощью метода массива map преобразуйте массив чисел в массив булевых значений.
 // Принцип преобразования следующий: если число больше 0, в итоговый массив записывается true, если меньше - false.
 // [1, 2, -10, -2, 7]; // -> [true, true, false, false, true]
+
+
+
+// const digitsArr = [1, 2, -10, -2, 7, 4, -77, 11, -9];
+
+// const resultArr = digitsArr.map((digit) => {
+//     if(digit > 0){
+//         return true;
+//     }else{
+//         return false;
+//     }
+// });
+
+// console.log(`resultArr`, resultArr);
+
+
+
+
 // 1.2
 // Дан массив пользователей (в примере ниже)
 
@@ -13,41 +31,65 @@
 // const users = [
 //   {
 //     name: 'Sam',
-//     role: 'admin'
+//     role: 'admin',
 //     age: 25,
 //   },
 //     {
 //     name: 'Peter',
-//     role: 'admin'
+//     role: 'admin',
 //     age: 16,
 //   },
 //     {
 //     name: 'Pablo',
-//     role: 'admin'
+//     role: 'admin',
 //     age: 32,
 //   },
 //     {
 //     name: 'Enrico',
-//     role: 'client'
+//     role: 'client',
 //     age: 43,
 //   },
 //     {
 //     name: 'Mary',
-//     role: 'client'
+//     role: 'client',
 //     age: 34,
 //   },
 //     {
 //     name: 'Katerine',
-//     role: 'guest'
+//     role: 'guest',
 //     age: 17,
 //   },
-// ]
+// ];
 
-// const adultAdmins = yourFunction(users); // [Sam, Pablo]
+// const adultsAdmins = users
+//     .filter((user) => user.role === "admin")
+//     .map(user => {
+//         if(user.age >= 18){
+//             return user.name;
+//         }
+//     });
+
+
+// console.log(`adultAdmin`, adultsAdmins);
+
+
+
+
+
 // 1.2
 // Дан массив чисел
 // С помощью метода reduce вычислите среднее арифметическое чисел в массиве.
-// const numbers = [1, 10, 17, 24, 45]
+
+
+// const numbers = [1, 10, 17, 24, 45];
+
+// const arithmeticMean =numbers.reduce(
+//     (acc, number) => acc + number, 0
+    
+// ) / (numbers.length || 1);
+
+// console.log(`numbers`, numbers);
+// console.log(`arithmeticMean`, arithmeticMean);
 
 
 
