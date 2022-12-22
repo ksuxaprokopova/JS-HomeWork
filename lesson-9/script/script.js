@@ -265,7 +265,6 @@ const  filterData =(dataArr, objectForFilter) => {
     });
   })
   return result;
-  console.log(result)
 
 };
 
