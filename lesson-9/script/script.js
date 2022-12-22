@@ -63,11 +63,8 @@
 
 // const adultsAdmins = users
 //     .filter((user) => user.role === "admin")
-//     .map(user => {
-//         if(user.age >= 18){
-//             return user.name;
-//         }
-//     });
+//     .filter((user) => user.age >= 18)
+//     .map((user) => user.name)
 
 
 // console.log(`adultAdmin`, adultsAdmins);
@@ -83,13 +80,18 @@
 
 // const numbers = [1, 10, 17, 24, 45];
 
-// const arithmeticMean =numbers.reduce(
-//     (acc, number) => acc + number, 0
-    
-// ) / (numbers.length || 1);
+// function arithmeticMean(acc, number, index) {
+//     const sum = acc + number;
 
+//     if ( index === numbers.length -1 ){
+//         return sum / numbers.length
+//     };
+//     return sum;
+//   }
+
+// const result = numbers.reduce(arithmeticMean, 0)
 // console.log(`numbers`, numbers);
-// console.log(`arithmeticMean`, arithmeticMean);
+// console.log(`result`, result);
 
 
 
@@ -110,9 +112,40 @@
 //   console.log(`In array [${array}] on position ${index}: ${element}`);
 // };
 
+// ownForEach = (arr, logger) => {
+//   for(let num of arr){
+//     logger(num, arr.indexOf(num), arr);
+//   };
+// };
 // ownForEach([1, 2, 3], logger);
-// ownMap([1, 2, 3], increment); // [2, 3, 4]
-// ownFilter([-2, 4, -1], isNegative); // [-2, -1]
+
+// const ownMap = (arr, increment) => {
+//   let arrClone = [];
+  
+//   for(let num of arr){
+//     arrClone.push(increment(num));
+//   }
+//   return arrClone;
+//  };
+
+// let resultOwnMap = ownMap([1, 2, 3], increment);
+// console.log(`resultOwnMap`, resultOwnMap);
+
+ 
+// const ownFilter = (arr, isNegative) => {
+//   let arrClone = [];
+
+//   for(let num of arr){
+//     if(isNegative(num) === true){
+//       arrClone.push(num);
+//     };
+//   }
+//   return arrClone;
+// };
+//  let resultOwnFilter = ownFilter([-2, 4, -1], isNegative);
+//  console.log(`resultOwnFilter`, resultOwnFilter);
+
+
 // Вы можете испольвать уже готовые колбек-функции isNegative, increment, logger, для тестов, или напсиать свои. Работа будет проверяться на основе предоставленых функций, так что советуем проверить работу на них.
 
 
@@ -132,56 +165,56 @@
 
 // Пример (данные можно взять любые другие):
 
-// const data = [
-//   {
-//     name: "John",
-//     age: 24,
-//     position: "senior",
-//     isActive: false,
-//   },
-//   {
-//     name: "Peter",
-//     age: 33,
-//     position: "middle",
-//     isActive: false,
-//   },
-//   {
-//     name: "Sam",
-//     age: 29,
-//     position: "junior",
-//     isActive: true,
-//   },
-//   {
-//     name: "Mary",
-//     age: 24,
-//     position: "middle",
-//     isActive: false,
-//   },
-//   {
-//     name: "Steve",
-//     age: 23,
-//     position: "middle",
-//     isActive: true,
-//   },
-//   {
-//     name: "Kate",
-//     age: 31,
-//     position: "middle",
-//     isActive: false,
-//   },
-//   {
-//     name: "Sally",
-//     age: 19,
-//     position: "junior",
-//     isActive: false,
-//   },
-//   {
-//     name: "Jack",
-//     age: 19,
-//     position: "middle",
-//     isActive: true,
-//   },
-// ];
+const data = [
+  {
+    name: "John",
+    age: 24,
+    position: "senior",
+    isActive: false,
+  },
+  {
+    name: "Peter",
+    age: 33,
+    position: "middle",
+    isActive: false,
+  },
+  {
+    name: "Sam",
+    age: 29,
+    position: "junior",
+    isActive: true,
+  },
+  {
+    name: "Mary",
+    age: 24,
+    position: "middle",
+    isActive: false,
+  },
+  {
+    name: "Steve",
+    age: 23,
+    position: "middle",
+    isActive: true,
+  },
+  {
+    name: "Kate",
+    age: 31,
+    position: "middle",
+    isActive: false,
+  },
+  {
+    name: "Sally",
+    age: 19,
+    position: "junior",
+    isActive: false,
+  },
+  {
+    name: "Jack",
+    age: 19,
+    position: "middle",
+    isActive: true,
+  },
+];
 
 // filterData(data, { age: 23 });
 // // [
@@ -221,3 +254,27 @@
 // // ]
 
 // // то есть, функция вернула массив со всеми работниками на позиции junior и всеми работниками, которым 19 лет
+
+const  filterData =(dataArr, objectForFilter) => {
+  let result = dataArr.filter((item) => {
+    console.log(`keys:`, Object.keys(objectForFilter));
+    return Object.keys(objectForFilter).every( key => {
+      console.log(`item`, item[key]);
+      console.log(Object.keys(objectForFilter));
+      return item[key] === objectForFilter[key];
+    });
+  })
+  return result;
+  console.log(result)
+
+};
+
+let result1 = filterData(data, { age: 23 });
+let result2 = filterData(data, { age: 24 });
+let result3 = filterData(data, { age: 19, position: "junior" });
+console.log(`result1`, result1);
+console.log(`result2`, result2);
+console.log(`result3`, result3);
+
+
+
