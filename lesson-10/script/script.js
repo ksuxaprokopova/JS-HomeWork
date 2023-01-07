@@ -124,11 +124,10 @@ const takeBook = () => {
       desiredBookA.isReading = true;
     
       alert(`Your book id is ${desiredBookA.id}`);
-      // alert("No book name");
-  
-      // return;
+    
     }
   
+    
     desiredBookName = desiredBookName.trim().toLowerCase();
     desiredBookAuthor = desiredBookAuthor.trim().toLowerCase();
   
