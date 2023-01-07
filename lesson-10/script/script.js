@@ -98,12 +98,39 @@ const takeBook = () => {
     let desiredBookName = prompt(`Enter book name:\n${availableBooksNames}`);
   
     if (!desiredBookName) {
-      alert("No book name");
+      const availableBooksAuthor = books
+       .filter((book) => !book.isReading)
+       .map((book) => ` - ${book.author}`)
+       .join("\n");
+
+       let desiredBookAuthor = prompt(`Enter book author:\n${availableBooksAuthor}`);
+
+       const desiredBookA = books.find((book) => {
+        return book.author.toLowerCase() === desiredBookAuthor;
+      });
+    
+      if (!desiredBookA) {
+        alert("No book with this autor");
+    
+        return;
+      }
+    
+      if (desiredBookA.isReading) {
+        alert("Sorry, this book is reading by someone else");
+    
+        return;
+      }
+    
+      desiredBookA.isReading = true;
+    
+      alert(`Your book id is ${desiredBookA.id}`);
+      // alert("No book name");
   
-      return;
+      // return;
     }
   
     desiredBookName = desiredBookName.trim().toLowerCase();
+    desiredBookAuthor = desiredBookAuthor.trim().toLowerCase();
   
     const desiredBook = books.find((book) => {
       return book.name.toLowerCase() === desiredBookName;
