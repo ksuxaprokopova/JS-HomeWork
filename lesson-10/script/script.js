@@ -90,68 +90,70 @@ function library() {
 
   
 const takeBook = () => {
-    const availableBooksNames = books
-      .filter((book) => !book.isReading)
-      .map((book) => ` - ${book.name}`)
-      .join("\n");
+     const availableBooksNames = books
+        .filter((book) => !book.isReading)
+        .map((book) => ` - ${book.name}`)
+        .join("\n");
   
-    let desiredBookName = prompt(`Enter book name:\n${availableBooksNames}`);
+      let desiredBookName = prompt(`Enter book name:\n${availableBooksNames}`);
   
-    if (!desiredBookName) {
-      const availableBooksAuthor = books
-       .filter((book) => !book.isReading)
-       .map((book) => ` - ${book.author}`)
-       .join("\n");
+      if (!desiredBookName) {
+        const availableBooksAuthor = books
+         .filter((book) => !book.isReading)
+         .map((book) => ` - ${book.author}`)
+        .join("\n");
 
-       let desiredBookAuthor = prompt(`Enter book author:\n${availableBooksAuthor}`);
+         let desiredBookAuthor = prompt(`Enter book author:\n${availableBooksAuthor}`);
 
-       const desiredBookA = books.find((book) => {
-        return book.author.toLowerCase() === desiredBookAuthor;
-      });
+        const desiredBookA = books.find((book) => {
+           return book.author.toLowerCase() === desiredBookAuthor;
+        });
     
-      if (!desiredBookA) {
-        alert("No book with this autor");
+        if (!desiredBookA) {
+           alert("No book with this autor");
     
-        return;
-      }
+           return;
+        }
     
-      if (desiredBookA.isReading) {
-        alert("Sorry, this book is reading by someone else");
+        if (desiredBookA.isReading) {
+            alert("Sorry, this book is reading by someone else");
     
-        return;
-      }
+         return;
+        }
     
-      desiredBookA.isReading = true;
+        desiredBookA.isReading = true;
     
-      alert(`Your book id is ${desiredBookA.id}`);
+        alert(`Your book id is ${desiredBookA.id}`);
     
-    }else{
+      }else{
       
-    desiredBookName = desiredBookName.trim().toLowerCase();
-    desiredBookAuthor = desiredBookAuthor.trim().toLowerCase();
+        desiredBookName = desiredBookName.trim().toLowerCase();
+        desiredBookAuthor = desiredBookAuthor.trim().toLowerCase();
   
-    const desiredBook = books.find((book) => {
-      return book.name.toLowerCase() === desiredBookName;
-    });
+        const desiredBookA = books.find((book) => {
+
+        return book.name.toLowerCase() === desiredBookName;
+
+        });
   
-    if (!desiredBook) {
-      alert("No book with this name");
+        if (!desiredBookA) {
+          alert("No book with this name");
   
-      return;
-    }
+          return;
+        }
   
-    if (desiredBook.isReading) {
-      alert("Sorry, this book is reading by someone else");
+        if (desiredBookA.isReading) {
+        alert("Sorry, this book is reading by someone else");
   
-      return;
-    }
+         return;
+        }
   
-    desiredBook.isReading = true;
+        desiredBookA.isReading = true;
   
-    alert(`Your book id is${desiredBook.id}`);
+        alert(`Your book id is${desiredBookA.id}`);
   
-    // console.log(`books`, books);
-    }
+   
+      };
      
 
     
