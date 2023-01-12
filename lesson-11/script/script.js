@@ -6,19 +6,19 @@ const products = [
   {
     name: "Iphone 12",
     brand: "Apple",
-    price: 3200000,
+    price: "price: 3200000",
     properties: ["Best camera", "Fast memory", "Apple A12 Processor"],
   },
   {
     name: "Galaxy S20 Ultra",
     brand: "Samsung",
-    price: 2900000,
+    price: "price: 2900000",
     properties: ["120 hz screen", "Water resistance"],
   },
   {
     name: "MI 9",
     brand: "Xiaomi",
-    price: 1300000,
+    price: "price: 1300000",
     properties: ["Best price", "Pay less - get more!"],
   },
 ];
@@ -26,57 +26,84 @@ const products = [
 
 // Для реазизации задачи используйте разные способы, как и innerHTML с шаблонными строками, так и метод append()
 
-const createCard = () => {
-  for(i = 0; i <= products.length; i++){
+const createCard = (createProductCard) => {
+  const cardContainer = document.createElement("div");
 
-    const createProductCard = (name, brand, properties, price) => {
-      const cardContainer = document.createElement("div");
-      const productName = document.createElement("h1");
-      const productBrand = document.createElement("h2");
-      const productPrise = document.createElement("h2");
-      
-    
-    
-      productName.innerText = name;
-      productBrand.innerText = brand;
+    createProductCard.forEach((product) =>{
 
-    
-      const productProperties = (properties) => {
-        const listProperties = document.createElement("ul");
+
+      const productCardContainer = document.createElement("div");
+      const productName = document.createElement("h2");
+      const productBrand = document.createElement("h3");
+      const productPrise = document.createElement("h4");
+      const productProperties = document.createElement("ul");
+
+
+      productName.innerText = product.name;
+      productBrand.innerText = product.brand;
+     
+
+
+      product.properties.forEach((elem) => {
+        const listProperties = document.createElement("li");
+        listProperties.innerText = elem;
        
     
-        properties.forEach((item) => {
-          const itemProperties = document.createElement("li");
-          itemProperties.innerText = item;
-    
-          listProperties.append(itemProperties);
-        });
-    
-        document.body.append(listProperties);
-      }
-    
-      productProperties(products);
+        productProperties.append(listProperties);
+
+      })
 
 
-      productPrise.innerText = price;
+      productPrise.innerText = product.price;
 
+
+      productCardContainer.append(productName, productBrand, productProperties, productPrise);
+
+
+
+      cardContainer.append(productCardContainer);
+    });
+
+    document.body.append(cardContainer);
+     
+} ;    
       
-    
-      cardContainer.append(productBrand, productName, productProperties, productPrise);
-    
-      console.dir(cardContainer);
-      console.log(cardContainer)
-    
-      return cardContainer;
-    
-    
-    }
-    
-    const cards = createProductCard(products);
-    console.log(cards)
-    
-    document.body.append(cards);
-  }
-}
-const result = createCard(products)
+  
 
+createCard(products);
+
+
+
+
+const createCard2 = (createProductCard) => {
+  const cardContainer = document.createElement("div");
+
+  cardContainer.innerHTML = `
+    ${createProductCard
+      .map((product) =>{
+        return `
+        <div>
+          <h2>${product.name}</h2>
+          <h3>${product.brand}</h3>
+          <ul>
+            ${product.properties
+              .map((properties) =>{
+                return`
+                <li>
+                  ${properties}
+                </li>
+                `
+                })
+              .join("")}
+          </ul>
+          <h4>${product.price}</h4>
+        </div>
+        `
+        })
+      .join("")};
+    `
+
+  document.body.append(cardContainer);
+};
+
+createCard2(products);

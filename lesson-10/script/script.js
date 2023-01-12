@@ -125,9 +125,8 @@ const takeBook = () => {
     
       alert(`Your book id is ${desiredBookA.id}`);
     
-    }
-  
-    
+    }else{
+      
     desiredBookName = desiredBookName.trim().toLowerCase();
     desiredBookAuthor = desiredBookAuthor.trim().toLowerCase();
   
@@ -151,9 +150,16 @@ const takeBook = () => {
   
     alert(`Your book id is${desiredBook.id}`);
   
-    console.log(`books`, books);
+    // console.log(`books`, books);
+    }
+     
+
+    
   };
   
+
+
+
   const returnBook = () => {
     const returningBookId = Number(prompt("Enter book id:"));
   
