@@ -29,4 +29,4 @@ const createTooltip = (button, text) => {
 
 const button = document.getElementById('example');
 
-createTooltip(button, 'example text bla bla bla');
+createTooltip(button, tool);
