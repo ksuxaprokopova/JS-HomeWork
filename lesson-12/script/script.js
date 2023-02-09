@@ -5,7 +5,7 @@
 // Елемент с подсказкой(тултип) должен быть добавлен в body
 // Для сдачи домашняя работа обязательно должна сожержать html с рабочим примером. Если ваш тултип будет выходить за границы экрана - не страшно, просто передвиньте ваш елемент, к которому прикрепили подсказку, дальше от края вьюпорта.
 
-// Пример работы:
+
 
 
 
@@ -25,8 +25,10 @@ const createTooltip = (button, text) => {
     tooltip.style.top = `${tooltipTop}px`;
     tooltip.style.left = `${tooltipLeft}px`;
 
+    console.log(tooltip)
+
 }
 
 const button = document.getElementById('example');
 
-createTooltip(button, tool);
+createTooltip(button, "You are sure? Lets Go!");
