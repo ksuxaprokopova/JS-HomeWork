@@ -21,15 +21,17 @@ const createTooltip = (button, text) => {
     const anchorElemCoords = button.getBoundingClientRect();
 
     const tooltipTop = anchorElemCoords.top - 10 - tooltip.clientHeight;
+    
     const tooltipLeft =anchorElemCoords.left + anchorElemCoords.width / 2 -tooltip.clientWidth /2;
 
     tooltip.style.top = `${tooltipTop}px`;
     tooltip.style.left = `${tooltipLeft}px`;
 
-    console.log(tooltip)
+    console.log(tooltip);
 
-}
+};
 
 const button = document.getElementById('example');
+const styleTool =document.getElementById("tooltip");
 
-createTooltip(button, tool);
+createTooltip(button, styleTool);
