@@ -12,7 +12,8 @@
 
 const createTooltip = (button, text) => {
 
-    const tooltip = document.querySelectorById("tool");
+    const tooltip = document.createElement("div");
+    tooltip.classList.add("tooltip")
     tooltip.innerText = text;
 
     document.body.append(tooltip);
@@ -31,4 +32,4 @@ const createTooltip = (button, text) => {
 
 const button = document.getElementById('example');
 
-createTooltip(button, "You are sure? Lets Go!");
+createTooltip(button, tool);

@@ -1,0 +1,39 @@
+body{
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    margin: 0 auto;
+    background-image: url(../img/fon.avif);
+}
+
+.title{
+    padding: 50px 0px;
+    color: blue;
+    font-size: 50px;
+}
+
+.gallery:not(:first-child){
+    display: none;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 100px;
+}
+
+
+.but{
+    height: 35px;
+    width: 100px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.but:not(:last-child){
+    margin-right: 150px;
+}
