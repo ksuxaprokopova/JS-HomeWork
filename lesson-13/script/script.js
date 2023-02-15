@@ -8,3 +8,51 @@
 // ЕЩЕ ВАЖНО! Ваш код должен рабоать для любого количества слайдов. Верстка может измениться, при этом js код должен оставаться универсальным.
 // Изображения находятся в папке /images но вы также можете взять любые. Стили так же остаются на ваше усмотрение, но помните, что вы фронтенд-разработчики, и у вас должно быть чувство прекрасного :)
 
+
+
+const sliders = [...document.querySelectorAll(".slider")];
+const buttonPrev = document.getElementById("prev");
+
+const buttonNext = document.getElementById("next");
+
+let sliderNumber = 0;
+
+
+const hideSlidesOnLoad = () => {
+    const slideToHide = sliders.slice(1);
+    slideToHide.forEach((slide) => {
+        slide.classList.add("hidden");
+    });
+};
+
+
+window.addEventListener("DOMContentLoaded", hideSlidesOnLoad);
+
+
+const showPrevSlide = () => {
+    sliders[sliderNumber].classList.add("hidden");
+
+    if(sliderNumber === 0){
+        sliders[sliders.length - 1].classList.remove("hidden");
+        sliderNumber = sliders.length - 1;
+    }else{
+        sliders[sliderNumber - 1].classList.remove("hidden");
+        sliderNumber--;
+    };
+};
+
+
+const showNextSlide = () => {
+    sliders[sliderNumber].classList.add("hidden");
+
+    if(sliderNumber === sliders.length - 1){
+        sliders[0].classList.remove("hidden");
+        sliderNumber = 0;
+    }else{
+        sliders[sliderNumber + 1].classList.remove("hidden");
+        sliderNumber++;
+    };
+};
+
+buttonPrev.addEventListener("click", showPrevSlide);
+buttonNext.addEventListener("click", showNextSlide);

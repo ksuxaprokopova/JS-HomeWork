@@ -11,9 +11,10 @@ body{
     font-size: 50px;
 }
 
-.gallery:not(:first-child){
-    display: none;
+.slider{
+    max-width: 400px;
 }
+
 
 .buttons{
     display: flex;
@@ -24,16 +25,20 @@ body{
 
 .but{
     height: 35px;
-    width: 100px;
+    width: 60px;
     background-color: transparent;
     color: black;
     border: none;
     border-bottom: 2px solid black;
-    border-radius: 2px;
-    font-size: 12px;
+    border-radius: 4px;
+    font-size: 16px;
     font-weight: bold;
 }
 
 .but:not(:last-child){
     margin-right: 150px;
+}
+
+.hidden{
+    display: none;
 }
