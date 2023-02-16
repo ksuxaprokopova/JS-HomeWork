@@ -128,7 +128,9 @@ const createSelect = (selectData) => {
 
     select.setAttribute("id", selectData.name);
     select.setAttribute("name", selectData.name);
+    select.classList.add("select");
 
+    
     selectData.options.forEach((opt) => {
         const option = document.createElement("option");
         
