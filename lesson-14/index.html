@@ -11,6 +11,34 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
+    <form class="form" id="form">
+        <div class="input-container">
+            <label for="login" class="input-label">Login</label>
+            <input type="text" class="input" id="login" name="login">
+            <span class="errorMessage"></span>
+        </div>
+        <div class="input-container">
+            <label for="email" class="input-label">Email</label>
+            <input type="text" class="input" id="email" name="email">
+            <span class="errorMessage"></span>
+        </div>
+        <div class="input-container">
+            <label for="password" class="input-label">Password</label>
+            <input type="text" class="input" id="password" name="password">
+            <span class="errorMessage"></span>
+        </div>
+        <div class="input-container input-container--checkbox">
+            <input type="checkbox" name="agree" id="agree" checked>
+            <label for="agree">
+                 Вы даете согласие на обработку своих персональных данных"
+            </label>
+        </div>
+        <button class="button" type="submit" id="submit" >
+            Отправить
+        </button>
+        
+    </form>
     <script src="./script/script.js"></script>
+    <script src="./script/classwork.js"></script>
 </body>
 </html>

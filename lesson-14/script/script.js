@@ -65,124 +65,124 @@
 // </div>
 // При следующих вводных данных у вас должен получится примерно такой результат (стили не применялись):
 
-const formConfig = [
-  {
-    element: "text",
-    name: "login",
-    label: "Логин",
-  },
-  {
-    element: "text",
-    name: "age",
-    label: "Возраст",
-  },
-  {
-    element: "select",
-    name: "language",
-    label: "Выберите язык программирования",
-    options: [
-      {
-        text: "JavaScript",
-        value: "js",
-      },
-      {
-        text: "Java",
-        value: "java",
-      },
-      {
-        text: "Python",
-        value: "python",
-      },
-    ],
-  },
-];
+// const formConfig = [
+//   {
+//     element: "text",
+//     name: "login",
+//     label: "Логин",
+//   },
+//   {
+//     element: "text",
+//     name: "age",
+//     label: "Возраст",
+//   },
+//   {
+//     element: "select",
+//     name: "language",
+//     label: "Выберите язык программирования",
+//     options: [
+//       {
+//         text: "JavaScript",
+//         value: "js",
+//       },
+//       {
+//         text: "Java",
+//         value: "java",
+//       },
+//       {
+//         text: "Python",
+//         value: "python",
+//       },
+//     ],
+//   },
+// ];
 
 
-const handleForm = (event) => {
-    event.preventDefault();
+// const handleForm = (event) => {
+//     event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const data = {};
+//     const formData = new FormData(event.target);
+//     const data = {};
 
-    for(let pair of formData.entries()){
-        data[pair[0]] = pair[1];
-    }
-};
-
-
-const createInput = (inputData) => {
-    const input = document.createElement("input");
-
-    input.setAttribute("type", "text");
-    input.setAttribute("id", inputData.name);
-    input.setAttribute("name", inputData.name);
-    input.classList.add("input");
-
-    return input;
-};
+//     for(let pair of formData.entries()){
+//         data[pair[0]] = pair[1];
+//     }
+// };
 
 
+// const createInput = (inputData) => {
+//     const input = document.createElement("input");
 
-const createSelect = (selectData) => {
-    const select = document.createElement("select");
+//     input.setAttribute("type", "text");
+//     input.setAttribute("id", inputData.name);
+//     input.setAttribute("name", inputData.name);
+//     input.classList.add("input");
 
-    select.setAttribute("id", selectData.name);
-    select.setAttribute("name", selectData.name);
-    select.classList.add("select");
+//     return input;
+// };
+
+
+
+// const createSelect = (selectData) => {
+//     const select = document.createElement("select");
+
+//     select.setAttribute("id", selectData.name);
+//     select.setAttribute("name", selectData.name);
+//     select.classList.add("select");
 
     
-    selectData.options.forEach((opt) => {
-        const option = document.createElement("option");
+//     selectData.options.forEach((opt) => {
+//         const option = document.createElement("option");
         
-        option.innerText = opt.text;
-        option.setAttribute("value", opt.value);
+//         option.innerText = opt.text;
+//         option.setAttribute("value", opt.value);
 
-        select.append(option);
-    });
+//         select.append(option);
+//     });
 
-    return select;
-};
+//     return select;
+// };
 
 
 
-const createForm = (arrFormData) => {
-    const form = document.createElement("form");
-    const buttonSubmit = document.createElement("button");
+// const createForm = (arrFormData) => {
+//     const form = document.createElement("form");
+//     const buttonSubmit = document.createElement("button");
 
-    buttonSubmit.setAttribute("type", "submit");
-    buttonSubmit.innerText = "submit";
+//     buttonSubmit.setAttribute("type", "submit");
+//     buttonSubmit.innerText = "submit";
 
-    buttonSubmit.classList.add("submit");
+//     buttonSubmit.classList.add("submit");
     
 
-    arrFormData.forEach((formElement) =>{
-        const divWrapper = document.createElement("div");
-        const label = document.createElement("label");
+//     arrFormData.forEach((formElement) =>{
+//         const divWrapper = document.createElement("div");
+//         const label = document.createElement("label");
 
 
-        label.setAttribute("for", formElement.label);
-        label.innerText = formElement.label;
+//         label.setAttribute("for", formElement.label);
+//         label.innerText = formElement.label;
 
 
-        if(formElement.element === "text"){
-            const input = createInput(formElement);
+//         if(formElement.element === "text"){
+//             const input = createInput(formElement);
 
-            divWrapper.append(label, input);
-        }else if(formElement.element === "select"){
-            const select = createSelect(formElement);
-            divWrapper.append(label, select);
-        }
+//             divWrapper.append(label, input);
+//         }else if(formElement.element === "select"){
+//             const select = createSelect(formElement);
+//             divWrapper.append(label, select);
+//         }
 
          
 
-        form.append(divWrapper);
-    })
+//         form.append(divWrapper);
+//     })
 
-    form.append(buttonSubmit);
-    document.body.append(form);
+//     form.append(buttonSubmit);
+//     document.body.append(form);
 
-    return form;
-};
+//     return form;
+// };
 
-let form = createForm(formConfig);
-form.addEventListener("submit", handleForm);
+// let form = createForm(formConfig);
+// form.addEventListener("submit", handleForm);
