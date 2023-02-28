@@ -115,24 +115,24 @@
 
 // Guest для поля author
 // текущую дату для поля time
-const createMessage = (author, text, reciever, time) => {
-  return `From ${author} to ${reciever}: ${text} (${time.toLocaleDateString()})`;
-};
-const message = createMessage("Peter", "Hello", "Sam", new Date());
-console.log(message);
+// const createMessage = (author, text, reciever, time) => {
+//   return `From ${author} to ${reciever}: ${text} (${time.toLocaleDateString()})`;
+// };
+// const message = createMessage("Peter", "Hello", "Sam", new Date());
+// console.log(message);
 
-const createNewMessage = ( author = "guest", text, reciever, time = new Date()) => {
-  return `From ${author} to ${reciever}: ${text} (${time.toLocaleDateString()})`;
-} 
+// const createNewMessage = ( author = "guest", text, reciever, time = new Date()) => {
+//   return `From ${author} to ${reciever}: ${text} (${time.toLocaleDateString()})`;
+// } 
 
-// // после выполнения этого задания, функция должна коректно работать с таким аргументом
-const messageNew = createNewMessage({
-  reciever: "John",
-  text: "Hi!",
-});
+// // // после выполнения этого задания, функция должна коректно работать с таким аргументом
+// const messageNew = createNewMessage({
+//   reciever: "John",
+//   text: "Hi!",
+// });
 
-// const messageNew = createNewMessage("John", "Hi!")
-console.log(messageNew);
+// // const messageNew = createNewMessage("John", "Hi!")
+// console.log(messageNew);
 
 
 
@@ -141,19 +141,43 @@ console.log(messageNew);
 // Задание 5
 
 
-// Напишите регулярное выражение, которое находит подстроки с такими свойствами:
-// начинается с буквенного символа
+//1)
+//  Напишите регулярное выражение, которое находит подстроки с такими свойствами:
+//  начинается с буквенного символа
 // заканчивает на буквенный символ
 // между первым и послденим символом находятя только числовые символы
 // для поиска используйте метод match
-// let str = "x1y 722a 333 a123v1n a55555a qwe1 1zxc";
+
+let strOne = "x1y 722a 333 a123v1n a55555a qwe1 1zxc";
+let regexpOne = /\w\d+\w/gi;
+console.log(strOne.match(regexpOne));
+
 // // для строки str результат должен быть следующий: 
 // // [ 'x1y', '722a', '333', 'a123v', 'a55555a' ]
+
+
+
+// 2)
 // Напишите регулярное выражение для валидации домена (адреса сайта)
 // Валидные домены: ex.ua, google.com, yandex.ru, site.com.ua, my-page.com
 // то есть, доменные имена начинаются с любого количества буквенных символов, чисел, символов - _ ., заканчиваются подстрокой, длина которой не менее 2 символов. Начало и конец обязательно разделены точкой
 // используйте метод test
+
+let strTwo = "ex.ua, google.com, yandex.ru, site.com.ua, my-page.com";
+let regexpTwo = /([a-z._-]+).([\w]{2,})/gi
+
+console.log(strTwo.match(regexpTwo));
+console.log(regexpTwo.test(strTwo));
+
+
+
+// 3)
 // Напишите регулярное выражаение, которое проверяет строку:
 // строка не должна содержать ничего кроме числовых символов
 // длина строка должна быть не менее 12, но можно и больше
 // Тестируйте свои регулярки тут: https://regex101.com
+
+let strFree = "5588889030008808088";
+let regexpFree = /(\d+){12,}/gi;
+
+console.log(strFree.match(regexpFree));
