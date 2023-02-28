@@ -79,10 +79,12 @@ const simpleValidateForm = (login, email, password) => {
     };
 
     return {
-        isFormsValid,
         errors,
+        isFormsValid,
     };
 };
+
+
 
 const handleCheckboxChange = (event) => {
     const checked = event.target.checked;
@@ -93,6 +95,7 @@ const handleCheckboxChange = (event) => {
         submitBtn.setAttribute("disabled", "");
     }
 };
+
 
 
 const highlightErroredInputs = (errors) => {
@@ -106,11 +109,14 @@ const highlightErroredInputs = (errors) => {
         const errorTextElement = form.querySelector(
             `input[name=${name}] ~ .errorMessage`
         );
-        console.log(`errorTextElement`, errorTextElement);
+        // console.log(`errorTextElement`, errorTextElement);
 
         erroredInput.setAttribute("data-invalid", "");
         errorTextElement.innerText = text;
+
+        return text;
     };
+   
 };
 
 
@@ -123,7 +129,7 @@ const handleInput = (event) => {
     };
 
     const errorTextElement = form.querySelector(
-        `input[name=${currentInput.name} ~ .errorMessage]`
+        `input[name=${currentInput.name}] ~ .errorMessage`
     )
 
     errorTextElement.innerText = "";
@@ -134,8 +140,6 @@ const handleInput = (event) => {
 
 const handleFormsSubmit = (event) => {
     event.preventDefault();
-
-    
 
     const loginValue = loginInput.value;
     const emailValue = emailInput.value;

@@ -27,8 +27,31 @@ div{
     border: 1px solid  rgb(113, 40, 173);
     color:  rgb(113, 40, 173);
 } */
+
+.input-container{
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container--checkbox{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+/* .errorMessage{
+    color: #f00;
+    text-align: left;
+} */
+
+
 .input:focus{
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.input{
+    margin-bottom: 10px;
 }
 
 
@@ -36,14 +59,20 @@ div{
     border-color: #f00;
 }
 
-/* 
+.input-label{
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
 .errorMessage{
     position: absolute;
     bottom: -10px;
     font-size: 14px;
     left: 8px;
     color: #f00;
-} */
+}
 
 
 .button{
